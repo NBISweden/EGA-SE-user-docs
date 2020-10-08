@@ -144,7 +144,7 @@ In order to encrypt the file(s) with crypt4gh, you need both a personal key pair
 The creation of a key pair is very simple using crypt4gh. Run the following command, replacing [my-key] with the name of the key (can be anything)  and specifying a passphrase when requested:
 ​
 ```bash
-crypt4gh-keygen --pk [my-key].pub --sk [my-key].sec 
+crypt4gh-keygen --pk <my-key>.pub --sk <my-key>.sec 
 ```
 ​
 To verify that the key pair was created, run the `ls` command and make sure the keys you specified exist in the folder
@@ -158,7 +158,7 @@ Next, download the public key (crypt4gh_key.pub) from this repository and place 
 Now you have all the keys and tools needed, you can run the following command in order to encrypt the file:
 ​
 ```bash
-crypt4gh encrypt --sk [my-key].sec --recipient_pk ega-se.key < [my-file] > [my-encypted-file].c4gh
+crypt4gh encrypt --sk <my-key>.sec --recipient_pk ega-se.key < <my-file> > <my-encypted-file>.c4gh
 ```
 ​
 ### Get the md5 checksum of the file
@@ -168,29 +168,29 @@ The submission portal requires an `md5` checksum for uploading the files. In ord
 ​* Linux and macOS
 
 ```bash
-md5sum [my-file] [my-encrypted-file].c4gh
+md5sum <my-file> <my-encrypted-file>.c4gh
 ```
 ​
 or this command if you want to store the md5 in a file:
 ​
 ```bash
-md5sum [my-file] [my-encrypted-file].c4gh > [my-md5].md5
+md5sum <my-file> <my-encrypted-file>.c4gh > <my-md5>.md5
 ```
 
 and the following command if you want the sha256 in the terminal:
 
 ```bash
-shasum -a 256 [file] [my-encrypted-file].c4gh
+shasum -a 256 <my-file> <my-encrypted-file>.c4gh
 ```
 
 or this command if you want to store the sha256 in a file:
 ​
 ```bash
-shasum -a 256[my-file] [my-encrypted-file].c4gh > [my-sha256].sha256
+shasum -a 256 <my-file> <my-encrypted-file>.c4gh > <my-sha256>.sha256
 ```
 
 ​* Windows
-To get the checksums using windows, first install the  [md5checker](https://pypi.org/project/md5checker/) running:
+To get the checksums using windows, first install the [md5checker](https://pypi.org/project/md5checker/) running:
 
 ```bash
 pip install md5checker
@@ -199,13 +199,13 @@ pip install md5checker
 Then get the md5 checksum for each file with:
 
 ```bash
-md5checker [my-file]
+md5checker <my-file>
 ```
 
 and the sha-256 checksum with:
 
 ```bash
-md5checker [my-file] -a sha256
+md5checker <my-file> -a sha256
 ```
 ​
 ## Upload
@@ -215,14 +215,14 @@ md5checker [my-file] -a sha256
 ​
 ### Get the configuration file
 ​
-The s3cmd tool requires a configuration file with the relevant settings. You can get the configuration file by logging in with your Elixir ID [here]()##TODO: add link here##
+The s3cmd tool requires a configuration file with the relevant settings. You can get the configuration file by logging in with your Elixir ID [here]()
 ​
 ### Upload the file(s)
 ​
-S3 allows for **optional** creation of folders and that can be achieved by defining the path in the [my-s3-path] variable
+S3 allows for **optional** creation of folders and that can be achieved by defining the path in the my-s3-path variable
 ​
 ```bash
-s3cmd -v -c [my-path-to-s3-config] put [my-encrypted-file].c4gh "s3://[my-username]/[my-s3-path]/[my-encrypted-file].c4gh"
+s3cmd -v -c <my-path-to-s3-config> put <my-encrypted-file>.c4gh "s3://<my-username>/<my-s3-path>/<my-encrypted-file>.c4gh"
 ```
 ​
 for example, if the file should be stored under the "experiment1" folder, the command would look like:
@@ -240,7 +240,7 @@ s3cmd -v -c /path/s3-config put file1.c4gh "s3://user/file1.c4gh"
 Once the upload is finished, make sure the file was uploaded, by running the following command:
 ​
 ```bash
-s3cmd -v -c [my-path-to-s3-config] ls "s3://[my-username]/[my-s3-path]/"
+s3cmd -v -c <my-path-to-s3-config> ls "s3://<my-username>/<my-s3-path>/"
 ```
 ​
 You should be able to see the file and potentially others stored in the same location.
