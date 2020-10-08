@@ -1,2 +1,2 @@
 # EGA-SE-user-docs
-Repository with all the information and documents for the the users of ega-se
+The repository contains the information and documents required to use the EGA-SE service. The [user-guide.md](https://github.com/NBISweden/EGA-SE-user-docs/blob/main/user-guide.md) file is a detailed how-to guide on encrypting and uploading files.
