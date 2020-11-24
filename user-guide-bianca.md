@@ -20,21 +20,36 @@ ssh <username>@rackham.uppmax.uu.se
 Navigate to the folder you want to pull the images.
 
 * To download the crypt4gh image run the following command in the terminal:
+
 ```bash
 singularity pull docker://nbisweden/ega-crypt4gh:crypt4gh-1.0.0
 ```
 
-Now you should be able to see a file with `.sif` extensions in the
+Alternative, you can download a ready made singularity image with:
+
+```bash
+wget https://github.com/NBISweden/EGA-SE-user-docs/releases/download/crypt4gh/crypt4gh-1.0.0.sif
+```
+
+Now you should be able to see a file with `.sif` extension in the
 folder when running the `ls` command.
 
 ### Move the singularity image to Bianca
 
 **Note**: If you already know how to move files to bianca, you can
-skip the deta ils for this part.
+skip the details for this part.
 
 You can move the singularity image to Bianca using wharf. The guide
 for transferring files from and to Bianca can be found
 [here](https://www.uppmax.uu.se/support/user-guides/transit-user-guide/).
+
+In the following examples, replace
+`ega-crypt4gh_crypt4gh-keygen-1.0.0.sif` with `crypt4gh-1.0.0.sif` if
+you opted for downloading with `wget` (alternativly you can rename it with 
+
+```bash
+mv crypt4gh-1.0.0.sif ega-crypt4gh_crypt4gh-keygen-1.0.0.sif
+```
 
 In summary, the steps needed are the following: In a terminal window
 
@@ -85,9 +100,11 @@ Download the public key (crypt4gh_key.pub) from this repository and
 place it in the same location as the images from the previous step.
 
 * Download the key in rackham running:
+
 ```bash
 wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
 ```
+
 * Repeat the process from the `Move the singularity image to Bianca`
   section above, this time copying the key instead of the image.
 
