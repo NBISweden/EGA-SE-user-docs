@@ -325,6 +325,11 @@ The s3cmd tool requires a configuration file with the relevant
 settings. You can get the configuration file by logging in with your
 Elixir ID [here]() 
 
+If you choose not to use the downloaded configuration file, we
+recommend setting the multipart chunk size significantly higher than
+the default 5 Mbyte. It can be set up to 2 Gbytes but values above 100
+Mbyte probably do very little to improve throughput.
+
 ### Upload the file(s)​
 
 S3 allows for **optional** creation of folders and that can be
