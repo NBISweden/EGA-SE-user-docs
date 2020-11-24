@@ -48,6 +48,8 @@ mv crypt4gh-1.0.0.sif crypt4gh
 PATH=$PATH:$(pwd)
 ```
 
+Now you should be able to go on to [encrypting your files](#encrypt).
+
 ## Install natively
 
 To encrypt, we'll document the usage of the `crypt4gh` command
