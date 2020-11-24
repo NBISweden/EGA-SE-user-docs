@@ -13,14 +13,50 @@ Submitted files need to be encrypted according to the
 standard. ​
 
 # Requirements
-​ 
-The easiest way to encrypt files is with the **crypt4gh** command
+
+Here we'll outline procedure for encrypting and uploading using tools such as
+`crypt4gh` and `s3cmd`.​ 
+
+There are different ways of getting this software and the way of
+getting it easiest will depend. 
+
+
+Here we'll document two cases where either container images are run
+with `singularity` (this is probably easiest if your files are
+available on a compute cluster). The other alternative would be
+installing the tools "natively".
+
+
+## Using singularity
+
+If you have `singularity` installed and operational, you can download
+ready-made images for [`crypt4gh`](https://github.com/NBISweden/EGA-SE-user-docs/releases/download/crypt4gh/crypt4gh-1.0.0.sif) and
+[`s3cmd`](https://github.com/NBISweden/EGA-SE-user-docs/releases/download/2.1.0/s3cmd_latest.sif).
+
+Once you've donwloaded those, you can rename them and use them as fix
+the permission, allowing you to use them as normal commands. To do
+this and amend `PATH` so the commands are available.
+
+So:
+
+```bash
+wget https://github.com/NBISweden/EGA-SE-user-docs/releases/download/2.1.0/s3cmd_latest.sif
+wget https://github.com/NBISweden/EGA-SE-user-docs/releases/download/crypt4gh/crypt4gh-1.0.0.sif
+chmod a+x s3cmd_latest.sif crypt4gh-1.0.0.sif
+mv s3cmd_latest.sif s3cmd
+mv crypt4gh-1.0.0.sif crypt4gh
+PATH=$PATH:$(pwd)
+```
+
+## Install natively
+
+To encrypt, we'll document the usage of the `crypt4gh` command
 line tool. That tool requires **Python 3.6** or newer and
 **virtualenv**. For uploading files we recommend **s3cmd** for linux
 and osx based systems and **s3Express** for Windows systems (**s3cmd**
 might work on windows as well). ​
 
-## Check if Python is installed
+### Check if Python is installed
 
 To check whether Python is already installed in your machine, you can
 run the following command in the terminal:
@@ -42,7 +78,7 @@ The output of the command should signify the version of python, in case it is in
 If the python is installed and the version is 3.6 or newer, you can
 skip the next step.
  
-## Install Python 3.6 or newer
+### Install Python 3.6 or newer
 ​
 
 The first step is to install python 3.6 or newer. The following links
@@ -58,7 +94,7 @@ provide guides for the various types of operating systems. If python
 Select the python executable suitable for your computer and make sure
 pip is installed.
 
-## Install virtualenv
+### Install virtualenv
 ​
 
 Virtualenv simplifies the installation of the needed tools.
@@ -79,7 +115,7 @@ py -m pip install --upgrade pip
 py -m pip install --user virtualenv
 ```
 ​
-## Create a virtual environment
+### Create a virtual environment
 ​
 Once virtualenv is installed, create a virtual environment which
 includes Python: ​
@@ -113,7 +149,7 @@ source env/bin/activate
 .\env\Scripts\activate
 ```
 ​
-## Installing the encryption tool
+### Installing the crypt4gh encryption tool
 ​
 The next step is to install
 [crypt4gh](https://github.com/EGA-archive/crypt4gh), by running the
@@ -133,7 +169,7 @@ which should return something like:
 ​
     GA4GH cryptographic utilities (version 1.4)
 ​
-## Installing the s3 command line tool (linux/osx)
+### Installing the s3 command line tool (linux/osx)
 ​
 `s3cmd` is a command line client for interacting with an S3 backend
 (the type of storage used in EGA-SE). A complete usage guide for
@@ -177,14 +213,20 @@ which should return something like
 
 ## Encrypt
 ​
-In order to encrypt the file(s) with crypt4gh, you need both a
-personal key pair and the EGA-SE public encryption key.
-​
-### Create a personal key pair
+
+In order to encrypt the file(s) with crypt4gh, you need the EGA-SE
+public encryption key. Optionally, you can use a key of your own to
+sign the file (allows proving it came from someone with control of ​the
+key). If you don't provide a secret key when encrypting, `crypt4gh`
+will generate one on the fly.
+
+
+### (Optional) Create a personal key pair
 ​
 
 **Note**: This step assumes that the previous ones have been followed
-and that the virtual environment is activated
+and that the virtual environment is activated or that `PATH` has been
+amended with the path where the container is.
 
 The creation of a key pair is very simple using crypt4gh. Run the
 following command, replacing [my-key] with the name of the key (can be
@@ -204,13 +246,23 @@ and place it in the same location as the keys from the previous step
 
 ### Encrypt the file(s)
 ​
+
 Now you have all the keys and tools needed, you can run the following
-command in order to encrypt the file:
+command in order to encrypt the file (if you want to use a secret key 
+you have):
+
 ​
 ```bash
 crypt4gh encrypt --sk <my-key>.sec --recipient_pk ega-se.key < <my-file> > <my-encypted-file>.c4gh
 ```
-​
+
+If you don't have a secret key, just remove that part:
+
+```bash
+crypt4gh encrypt --recipient_pk ega-se.key < <my-file> > <my-encypted-file>.c4gh
+```
+
+
 ### Get the md5 checksum of the file
 ​
 The submission portal requires an `md5` checksum for uploading the
@@ -307,6 +359,7 @@ You should be able to see the file and potentially others stored in
 the same location.
 
 ## Important notes
+
 - To deactivate the virtualenv run the following command:
 ​
 ```bash
