@@ -14,7 +14,7 @@ standard. ​
 
 # Requirements
 
-Here we'll outline procedure for encrypting and uploading using tools such as
+Here we'll outline the procedure for encrypting and uploading using tools such as
 `crypt4gh` and `s3cmd`.​ 
 
 There are different ways of getting this software and the way of
