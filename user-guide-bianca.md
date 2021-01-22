@@ -25,7 +25,7 @@ Navigate to the folder you want to pull the images.
 singularity pull docker://nbisweden/ega-crypt4gh:crypt4gh-1.0.0
 ```
 
-Alternative, you can download a ready made singularity image with:
+Alternatively, you can download a ready made singularity image with:
 
 ```bash
 wget https://github.com/NBISweden/EGA-SE-user-docs/releases/download/crypt4gh/crypt4gh-1.0.0.sif
@@ -118,4 +118,3 @@ use different names (at least different extensions) for [my-file] and
 ```bash
 singularity run ega-crypt4gh_crypt4gh-keygen-1.0.0.sif encrypt --recipient_pk crypt4gh_key.pub < <my-file> > <my-encypted-file>.c4gh
 ```
-
