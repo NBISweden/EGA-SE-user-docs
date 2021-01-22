@@ -45,7 +45,7 @@ for transferring files from and to Bianca can be found
 
 In the following examples, replace
 `ega-crypt4gh_crypt4gh-keygen-1.0.0.sif` with `crypt4gh-1.0.0.sif` if
-you opted for downloading with `wget` (alternativly you can rename it with 
+you opted for downloading with `wget`. Alternatively you can rename it with 
 
 ```bash
 mv crypt4gh-1.0.0.sif ega-crypt4gh_crypt4gh-keygen-1.0.0.sif
