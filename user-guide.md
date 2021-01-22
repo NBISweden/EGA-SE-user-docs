@@ -258,7 +258,7 @@ you have):
 crypt4gh encrypt --sk <my-key>.sec --recipient_pk ega-se.key < <my-file> > <my-encypted-file>.c4gh
 ```
 
-If you don't have a secret key, just remove that part:
+If you don't have a secret key, just remove that part and run:
 
 ```bash
 crypt4gh encrypt --recipient_pk ega-se.key < <my-file> > <my-encypted-file>.c4gh
@@ -373,4 +373,3 @@ the same location.
 deactivate
 ```
 ​
-
