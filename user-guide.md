@@ -325,7 +325,7 @@ and that the virtual environment is activated
 ​
 The s3cmd tool requires a configuration file with the relevant
 settings. You can get the configuration file by logging in with your
-Elixir ID [here]() 
+Elixir ID [here](https://login.ega.nbis.se/) 
 
 If you choose not to use the downloaded configuration file, we
 recommend setting the multipart chunk size significantly higher than
