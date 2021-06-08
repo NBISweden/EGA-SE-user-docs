@@ -69,14 +69,30 @@ to be run everytime a new terminal window is opened):​
 
 ### Installing crypt4gh
 ​
-The next step is to install [crypt4gh](https://github.com/EGA-archive/crypt4gh),
-by running the following command:
+The next step is to install [crypt4gh](https://github.com/EGA-archive/crypt4gh).
+
+There are two versions of crypt4gh that are functionally identical, but
+implemented in different languages; a python version, and a golang version.
+
+#### Installing the python version
+
+The python version of crypt4gh is available through the python package manager
+[pip](https://pypi.org/project/pip/), and can be installed in the virtualenv by
+running the following command:
 ​
 ```bash
 pip install crypt4gh
 ```
 ​
-To verify the installation run:
+#### Installing the golang version
+
+Instructions for installing the golang version of crypt4gh is available
+[here](https://pkg.go.dev/github.com/elixir-oslo/crypt4gh#readme-installation)
+from the golang package page. Binary releases can also be downloaded from the
+[github releases page](https://github.com/elixir-oslo/crypt4gh/releases).
+
+Once you have installed or downloaded the tool from either source, verify the
+installation with:
 ​
 ```bash
 crypt4gh --version
