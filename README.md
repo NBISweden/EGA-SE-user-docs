@@ -118,31 +118,27 @@ to improve throughput.
 
 ### Upload the file(s)​
 
-S3 allows for **optional** creation of folders and that can be achieved by
-defining the path in the my-s3-path variable.
-
-```bash
-s3cmd -v -c [my-path-to-s3-config] put [my-encrypted-file].c4gh "s3://[my-username]/[my-s3-path]/[my-encrypted-file].c4gh"
-```
+S3 allows for **optional** creation of folders. Folder creation is automatic
+when adding a directory name to a file upload.
 ​
-for example, if the file should be stored under the "experiment1" folder, the
-command would look like:
+For example, if `file1.c4gh` should be stored under the `experiment1` folder,
+the command would look like:
 ​
 ```bash
-s3cmd -v -c /path/s3-config put file1.c4gh "s3://user/experiment1/file1.c4gh"
+s3cmd -v -c /path/s3-config put file1.c4gh "s3://[username]/experiment1/file1.c4gh"
 ```
 ​
 while in case no folder needs to be created, the command would look like:
 ​
 ```bash
-s3cmd -v -c /path/s3-config put file1.c4gh "s3://user/file1.c4gh"
+s3cmd -v -c /path/s3-config put file1.c4gh "s3://[username]/file1.c4gh"
 ```
 ​
 Once the upload is finished, make sure the file was uploaded, by running the
 following command:
 ​
 ```bash
-s3cmd -v -c [my-path-to-s3-config] ls "s3://[my-username]/[my-s3-path]/"
+s3cmd -v -c [my-path-to-s3-config] ls "s3://[username]/[my-s3-path]/"
 ```
 ​
 You should be able to see the file and potentially others stored in the same
