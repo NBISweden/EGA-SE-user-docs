@@ -78,14 +78,10 @@ Outside of Bianca, this can be limited to these two or three steps:
    Now that you have the public key, and the tools you need, you can encrypt the
    submission files. An encryption key will be created automatically by the
    tool, but if you prefer to use a specific key, you can provide one using the
-   `--sk` argument.
-
-   **Warning:** Please make sure to use different names (at least different
-   extensions) for `[my-file]` and `[my-encrypted-file]` to avoid destroying
-   your original file!
+   `-s` argument.
 
    ```bash
-   ./crypt4gh encrypt --recipient_pk crypt4gh_key.pub < [my-file] > [my-encrypted-file].c4gh
+   ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file] [-s [my-key].sec.pem]]
    ```
 
 ## Submitting
