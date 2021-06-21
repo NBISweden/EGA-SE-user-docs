@@ -84,12 +84,6 @@ Outside of Bianca, this can be limited to these two or three steps:
    extensions) for `[my-file]` and `[my-encrypted-file]` to avoid destroying
    your original file!
 
-   with singularity:
-   ```bash
-   ./crypt4gh encrypt --recipient_pk crypt4gh_key.pub < [my-file] > [my-encrypted-file].c4gh
-   ```
-
-   with native tools:
    ```bash
    ./crypt4gh encrypt --recipient_pk crypt4gh_key.pub < [my-file] > [my-encrypted-file].c4gh
    ```
