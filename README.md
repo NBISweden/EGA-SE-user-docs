@@ -67,7 +67,7 @@ Outside of Bianca, this can be limited to these two or three steps:
    specifying a passphrase when requested:
 ​
    ```bash
-   crypt4gh-keygen --pk [my-key].pub --sk [my-key].sec
+   crypt4gh generate --name=[my-key]
    ```
 
    To verify that the key pair was created, run the `ls` command and make sure
