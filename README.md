@@ -81,7 +81,7 @@ Outside of Bianca, this can be limited to these two or three steps:
    `-s` argument.
 
    ```bash
-   ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file] [-s [my-key].sec.pem]]
+   ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file] [-s [my-key].sec.pem]
    ```
 
 ## Submitting
