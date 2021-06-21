@@ -101,23 +101,29 @@ argument.
   The creation of a key pair is very simple using `crypt4gh`. Run the following
   command, using any name instead of [my-key]:
 ​
-  ```bash
-  crypt4gh-keygen --pk [my-key].pub --sk [my-key].sec
-  ```
+   ```bash
+   crypt4gh generate --name=[my-key]
+   ```
 
-To encrypt the data with a new secret key, use:
+   To verify that the key pair was created, run the `ls` command and make sure
+   the keys you specified exist in the folder.
 
-**Warning:** Please make sure to use different names (at least different extensions) for `[my-file]` and `[my-encrypted-file]` to avoid destroying your original file!
+* Encrypt the files
 
-```bash
-./crypt4gh encrypt --recipient_pk crypt4gh_key.pub < [my-file] > [my-encrypted-file].c4gh
-```
+   Now that you have the public key, and the tools you need, you can encrypt the
+   submission files. An encryption key will be created automatically by the
+   tool, but if you prefer to use a specific key, you can provide one using the
+   `-s` argument.
 
-To encrypt with a given secret key use:
+   ```bash
+   ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file]
+   ```
 
-```bash
-./crypt4gh encrypt --sk [my-key].sec --recipient_pk crypt4gh_key.pub < [my-file] > [my-encrypted-file].c4gh
-```
+   To encrypt with a given secret key use:
+
+   ```bash
+   ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file] -s [my-key].sec.pem
+   ```
 
 ## Move the files back
 
