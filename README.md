@@ -37,13 +37,7 @@ connected to the internet. This process is detailed in the
 
   - [Login to uppmax](bianca.md#login-to-uppmax)
 
-  - [Get the crypt4gh image](bianca.md#get-the-crypt4gh-image)
-
-  - [Get the crypt4gh public key](bianca.md#download-the-crypt4gh-public-key)
-
-  - [Upload to the wharf](bianca.md#upload-to-the-wharf)
-
-  - [Download the file to Bianca](bianca.md#download-the-files-to-bianca)
+  - [Install crypt4gh on Bianca](bianca.md#install-crypt4gh-on-bianca)
 
   - [Encrypt the files](bianca.md#encrypt-the-files)
 
