@@ -39,9 +39,9 @@ connected to the internet. This process is detailed in the
 
   - [Install crypt4gh on Bianca](bianca.md#install-crypt4gh-on-bianca)
 
-  - [Encrypt the files](bianca.md#encrypt-the-files)
+  - [Encrypt your sensitive data](bianca.md#encrypt-your-sensitive-data)
 
-  - [Move the files back](bianca.md#move-the-files-back)
+  - [Move the encrypted files to the wharf](bianca.md#move-encrypted-files-to-the-wharf-for-upload)
 
 Outside of Bianca, this can be limited to these two or three steps:
 
