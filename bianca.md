@@ -18,14 +18,16 @@ refresher, here are some helpful links:
 
 - [Bianca User Guide](https://www.uppmax.uu.se/support/user-guides/bianca-user-guide/)
 
-## Get the crypt4gh image
+## Install crypt4gh on bianca
+
+### Get the crypt4gh singularity image
 
 Singularity is the recommended way to use crypt4gh on Bianca. Follow the general
 [Singularity setup instructions](singularity.md) to get the `crypt4gh` tool that
 you need to move to bianca for encryption, as well as the `s3cmd` tool that you
 will need later for submission.
 
-## Download the crypt4gh public key
+### Download the crypt4gh public key
 
 For the SDA to be able to understand the encrypted files when they are uploaded,
 they need to be encrypted with the correct public key. This key can be
@@ -34,7 +36,7 @@ downloaded from this repository with this command:
 wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
 ```
 
-## Upload to the wharf
+### Upload keys and image to the wharf
 
 Bianca uses a system called the wharf to transfer files without having a direct
 connection to the internet. You can upload files to this system from the outside
@@ -66,7 +68,7 @@ container and public key.
   cp crypt4gh* ~/<project_name>/
   ```
 
-## Download the files to Bianca
+### Move keys and image into Bianca
 
 You can now log out from the wharf and log in to bianca to transfer the files
 out of the wharf and in to your project.
@@ -89,7 +91,7 @@ out of the wharf and in to your project.
 Running the `ls` command in this folder, you should be able to see the
 `crypt4gh`, and `crypt4gh_key.pub` files.
 
-## Encrypt the files
+## Encrypt your sensitive data
 
 Now you have the public key, and the tools you need, so it's time to encrypt the
 submission files. An encryption key will be created automatically by the tool,
@@ -125,7 +127,7 @@ argument.
    ./crypt4gh encrypt -p crypt4gh_key.pub -f [my-file] -s [my-key].sec.pem
    ```
 
-## Move the files back
+## Move encrypted files to the wharf for upload
 
 Moving the files back uses the same steps as uploading, but "backwards"
 
