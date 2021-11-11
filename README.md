@@ -102,6 +102,11 @@ to improve throughput.
 
 ### Upload the file(s)​
 
+**NOTE: At the time of writing there is an issue with uppmax that prevents
+singularity images from reading the wharf directory from the uppmax side. If you
+are submitting data from bianca, you need to install s3cmd natively using
+[this guide](installing.md) instead of using the singularity option.**
+
 S3 allows for **optional** creation of folders. Folder creation is automatic
 when adding a directory name to a file upload.
 ​
