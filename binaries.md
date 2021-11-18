@@ -8,7 +8,7 @@ the appropriate version and download it from the command line with `wget`.
 The list of releases for `s3cmd` for Linux based systems can be found [here](https://github.com/s3tools/s3cmd/releases/tag/v2.2.0), for Windows systems [here](https://www.s3express.com/download.htm),
 while for the `crypt4gh` [here](https://github.com/elixir-oslo/crypt4gh/releases/tag/v1.3.0).
 
-For example, if you your operating system is Linux based, download the files using:
+For example, if your operating system is Linux based, download the files using:
 ```bash
 wget https://github.com/s3tools/s3cmd/releases/download/v2.2.0/s3cmd-2.2.0.tar.gz
 wget https://github.com/elixir-oslo/crypt4gh/releases/download/v1.3.0/crypt4gh_linux_x86_64.tar.gz

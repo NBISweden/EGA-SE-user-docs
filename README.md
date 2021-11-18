@@ -99,7 +99,7 @@ setting the multipart chunk size significantly higher than the default 5 Mbyte.
 It can be set up to 2 Gbytes but values above 100 Mbyte probably do very little
 to improve throughput.
 
-**NOTE: The following section requires the usage of `[username]` when uploading data.
+**NOTE**: The following section requires the usage of `[username]` when uploading data.
 The username refers to the value of the `secret_key` in the downloaded configuration file. 
 Make sure to get it from the configuration file and use it in all `s3cmd` commands.
 
