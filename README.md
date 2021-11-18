@@ -22,7 +22,7 @@ To prepare the system follow the instructions [here](binaries.md). This is a **r
 whether you work on bianca or any other system.
 
 **Note** If you are using Bianca, see the [Encrypting on Bianca](bianca.md)
-instructions which cover trasferring the crypt4gh tool and the public key to 
+instructions which cover transferring the crypt4gh tool and the public key to 
 bianca.
 
 ## Encrypting
