@@ -1,7 +1,8 @@
 # EGA-SE-user-docs
 
 This repository contains user information on how to submit files to the swedish
-Sensitive Data Archive (SDA) service. This document serves as an outline of the submission process, and links to more detailed guides on how to perform the individual steps for creating a submission.
+Sensitive Data Archive (SDA) service. This document serves as an outline of the submission process, 
+and links to more detailed guides on how to perform the individual steps for creating a submission.
 
 ## Preparing the data
 
@@ -17,15 +18,12 @@ Submitting data requires two tools,
 for encrypting the data, and [s3cmd](https://s3tools.org/s3cmd) for uploading to
 the SDA.
 
+To prepare the system follow the instructions [here](binaries.md). This is a **required step**
+whether you work on bianca or any other system.
+
 **Note** If you are using Bianca, see the [Encrypting on Bianca](bianca.md)
-instructions which cover both building the crypt4gh tool and transferring it to
+instructions which cover trasferring the crypt4gh tool and the public key to 
 bianca.
-
-There are two ways to prepare the system:
-
-1) [Using singularity](singularity.md)
-
-2) [Installing natively](installing.md)
 
 ## Encrypting
 
@@ -80,12 +78,13 @@ Outside of Bianca, this can be limited to these two or three steps:
 
 ## Submitting
 
-Once your files are encrypted you are almost ready to start submitting to the
+Once your files are encrypted, you are almost ready to start submitting to the
 SDA. There is just one more thing that is needed; checksums for the files.
 
 ### Get checksums of the files
 ​
-Once the files are uploaded they need to be validated, which will require you to enter md5 and sha256 checksums for each file. To prepare for this later step, it's adviced to create checksums for all files as you upload them.
+Once the files are uploaded, they need to be validated, which will require you to enter md5 and sha256 checksums for each file. 
+To prepare for this later step, it's advised to create checksums for all files as you upload them.
 
 Check our short guide on [Calculating checksums of files](checksums.md) for details.
 ​
@@ -100,12 +99,11 @@ setting the multipart chunk size significantly higher than the default 5 Mbyte.
 It can be set up to 2 Gbytes but values above 100 Mbyte probably do very little
 to improve throughput.
 
-### Upload the file(s)​
+**NOTE: The following section requires the usage of `[username]` when uploading data.
+The username refers to the value of the `secret_key` in the downloaded configuration file. 
+Make sure to get it from the configuration file and use it in all `s3cmd` commands.
 
-**NOTE: At the time of writing there is an issue with uppmax that prevents
-singularity images from reading the wharf directory from the uppmax side. If you
-are submitting data from bianca, you need to install s3cmd natively using
-[this guide](installing.md) instead of using the singularity option.**
+### Upload the file(s)​
 
 S3 allows for **optional** creation of folders. Folder creation is automatic
 when adding a directory name to a file upload.

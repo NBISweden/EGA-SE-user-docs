@@ -20,12 +20,8 @@ refresher, here are some helpful links:
 
 ## Install crypt4gh on bianca
 
-### Get the crypt4gh singularity image
-
-Singularity is the recommended way to use crypt4gh on Bianca. Follow the general
-[Singularity setup instructions](singularity.md) to get the `crypt4gh` tool that
-you need to move to bianca for encryption, as well as the `s3cmd` tool that you
-will need later for submission.
+The guide assumes that the [instructions](binaries.md) for downloading and extracting
+`crypt4gh` have been followed.
 
 ### Download the crypt4gh public key
 
@@ -36,7 +32,7 @@ downloaded from this repository with this command:
 wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_key.pub
 ```
 
-### Upload keys and image to the wharf
+### Upload keys and encryption tool to the wharf
 
 Bianca uses a system called the wharf to transfer files without having a direct
 connection to the internet. You can upload files to this system from the outside
@@ -44,8 +40,8 @@ using sftp, or from uppmax by simply mounting the wharf drives. The guide for
 transferring files from and to Bianca can be found
 [here](https://www.uppmax.uu.se/support/user-guides/transit-user-guide/).
 
-From a terminal window, run the following commands to upload your singularity
-container and public key.
+From a terminal window, run the following commands to upload your `crypt4gh`
+binary and public key.
 
 * Login to transit running:
   ```bash
@@ -62,7 +58,7 @@ container and public key.
   Bianca, so you will need to provide your password along with your two-factor
   authentication code.
 
-* Copy the image and public key files to the project drive in the wharf using the `cp` command:
+* Copy the binary and public key files to the project drive in the wharf using the `cp` command:
 
   ```bash
   cp crypt4gh* ~/<project_name>/
@@ -95,7 +91,7 @@ Running the `ls` command in this folder, you should be able to see the
 
 Now you have the public key, and the tools you need, so it's time to encrypt the
 submission files. An encryption key will be created automatically by the tool,
-but if you prefer to use a specific key, you can provide one using the `--sk`
+but if you prefer to use a specific key, you can provide one using the `-s`
 argument.
 
 * (optional) Create a key pair
