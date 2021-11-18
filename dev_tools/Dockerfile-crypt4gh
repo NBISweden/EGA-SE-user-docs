@@ -1,9 +1,0 @@
-FROM python:3.8-buster
-
-RUN mkdir -p /working-directory
-WORKDIR /working-directory
-
-RUN apt-get update && apt-get -y upgrade
-RUN pip3 install crypt4gh
-
-ENTRYPOINT ["/usr/local/bin/crypt4gh"]
