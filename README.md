@@ -112,20 +112,20 @@ For example, if `file1.c4gh` should be stored under the `experiment1` folder,
 the command would look like:
 ​
 ```bash
-s3cmd -v -c /path/s3-config put file1.c4gh "s3://[username]/experiment1/file1.c4gh"
+./s3cmd-2.2.0/s3cmd -v -c /path/s3-config put [my-path-to-file1.c4gh] "s3://[username]/experiment1/file1.c4gh"
 ```
 ​
 while in case no folder needs to be created, the command would look like:
 ​
 ```bash
-s3cmd -v -c /path/s3-config put file1.c4gh "s3://[username]/file1.c4gh"
+./s3cmd-2.2.0/s3cmd -v -c /path/s3-config put [my-path-to-file1.c4gh] "s3://[username]/file1.c4gh"
 ```
 ​
 Once the upload is finished, make sure the file was uploaded, by running the
 following command:
 ​
 ```bash
-s3cmd -v -c [my-path-to-s3-config] ls "s3://[username]/[my-s3-path]/"
+./s3cmd-2.2.0/s3cmd -v -c [my-path-to-s3-config] ls "s3://[username]/[my-s3-path]/"
 ```
 ​
 You should be able to see the file and potentially others stored in the same
