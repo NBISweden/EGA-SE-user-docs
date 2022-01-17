@@ -157,7 +157,7 @@ You recieve an email from the FEGA-SE helpdesk that contains a URL. This URL con
 ```bash
 ./download_data.sh path/filename
 ```
-This downloads all the encrypted files from the text file and allows it to maintains the structure of the dataset. Next, you must transfer the downloaded encrypt files and the secret key to a secure environment. Use the following command to decypt files inside the secure environment using the secret key - `user.sec` that was generated in the previous step.
+This downloads all the encrypted files from the text file and allows it to maintains the structure of the dataset. Next, you must transfer the downloaded encrypt files and the secret key to a secure environment. Use the following command to decrypt files inside the secure environment using the secret key - `user.sec` that was generated in the previous step.
 
 ```bash
 crypt4gh decrypt --sk user.sec < encrypted-file.c4gh > encrypted-file
