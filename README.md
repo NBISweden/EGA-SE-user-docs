@@ -152,7 +152,7 @@ crypt4gh-keygen --sk user.sec --pk user.pub
 
 ### Decrypting the data files
 
-You recieve an email from the FEGA-SE helpdesk that contains a URL. This URL contains links to download the encrypted data files. Download the download_data script from [here](https://github.com/NBISweden/LocalEGA-SE-Deployment/blob/refactor/one-checksum-file/dev-tools/publicize_file/download_data.sh) and use the following command.
+You recieve an email from the FEGA-SE helpdesk that contains a URL. This URL contains links to download the encrypted data files. Download the `download_data` script from [here](https://github.com/NBISweden/LocalEGA-SE-Deployment/blob/refactor/one-checksum-file/dev-tools/publicize_file/download_data.sh) and use the following command.
 
 ```bash
 ./download_data.sh path/filename
