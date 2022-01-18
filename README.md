@@ -154,9 +154,16 @@ crypt4gh-keygen --sk user.sec --pk user.pub
 
 You recieve an email from the FEGA-SE helpdesk that contains a URL. This URL contains links to download the encrypted data files. Download the `download_data` script from [here](https://github.com/NBISweden/LocalEGA-SE-Deployment/blob/refactor/one-checksum-file/dev-tools/publicize_file/download_data.sh) and use the following command.
 
+
+```bash
+./download_data.sh
+```
+In case the name of the text file is changed or it exists in a different path than the download script, run:
+
 ```bash
 ./download_data.sh path/filename
 ```
+
 This downloads all the encrypted files from the text file and allows it to maintain the structure of the dataset. Next, you must transfer the downloaded encrypt files and the secret key to a secure environment. Use the following command to decrypt files inside the secure environment using the secret key - `user.sec` that was generated in the previous step.
 
 ```bash
