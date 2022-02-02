@@ -79,7 +79,7 @@ Outside of Bianca, this can be limited to these two or three steps:
    ```bash
    ./crypt4gh encrypt -p [crypt4gh-public-key.pub] -f [my-file] [-s [my-key].sec.pem]
    ```
-   where `crypt4gh-public-key.pub` the key crypt4gh public key you downloaded in the previous step.
+   where `crypt4gh-public-key.pub` is the crypt4gh public key you downloaded in the previous step.
 
 ## Submitting
 
