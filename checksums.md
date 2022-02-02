@@ -15,18 +15,18 @@ command for md5 checksums, while the OS X command is `md5`.
 
 ```bash
 # Calculate md5 checksum on linux
-md5sum <my-file> <my-encrypted-file>.c4gh
+md5sum [my-file] [my-encrypted-file].c4gh
 # ... and OS X
-md5 <my-file> <my-encrypted-file>.c4gh
+md5 [my-file] [my-encrypted-file].c4gh
 # The sha256 checksum command is the same on both platforms
-shasum -a 256 <my-file> <my-encrypted-file>.c4gh
+shasum -a 256 [my-file] [my-encrypted-file].c4gh
 ```
-​
+
 The results can be written to a file using the `>` operator:
 
 ex.
 ```bash
-md5sum <my-file> <my-encrypted-file>.c4gh > <my-files>.md5
+md5sum [my-file] [my-encrypted-file].c4gh > [my-files].md5
 ```
 
 ## Windows
@@ -49,18 +49,18 @@ pip install md5checker
 Then get the md5 checksum for each file with:
 
 ```PowerShell
-md5checker <my-file>
+md5checker [my-file]
 ```
 
 and the sha-256 checksum with:
 
 ```PowerShell
-md5checker <my-file> -a sha256
+md5checker [my-file] -a sha256
 ```
-​
+
 The `>` operator works the same in PowerShell as it does in linux and OS X, so
 you can use the same syntax to write the output to a file.
 
 ```PowerShell
-md5checker <my-file> > <my-file>.md5
+md5checker [my-file] > [my-file].md5
 ```

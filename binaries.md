@@ -11,7 +11,7 @@ while for the `crypt4gh` [here](https://github.com/elixir-oslo/crypt4gh/releases
 For example, if your operating system is Linux based, download the files using:
 ```bash
 wget https://github.com/s3tools/s3cmd/releases/download/v2.2.0/s3cmd-2.2.0.tar.gz
-wget https://github.com/elixir-oslo/crypt4gh/releases/download/v1.3.0/crypt4gh_linux_x86_64.tar.gz
+wget https://github.com/elixir-oslo/crypt4gh/releases/download/v1.4.0/crypt4gh_linux_x86_64.tar.gz
 ```
 
 ## Check the python version
@@ -23,9 +23,9 @@ If the version is `2.X.X`, follow the instructions in the next section to [creat
 with python 3. Otherwise, move to section [Extract the executables](binaries.md#extract-the-executables).
 
 ### Create a virtual environment
-​
+
 The python virtual environment tools come bundled with python since version
-3.4, and ​the syntax is the same on all platforms.
+3.4, and the syntax is the same on all platforms.
 
 ```bash
 python3 -m venv venv
@@ -33,10 +33,10 @@ python3 -m venv venv
 
 This will create a folder called `venv` under the current directory. To activate
 the environment run the following command from the terminal (this command has
-to be run every time a new terminal window is opened):​
+to be run every time a new terminal window is opened):
 
 * Linux and macOS
-​
+
   ```bash
   source venv/bin/activate
   ```
