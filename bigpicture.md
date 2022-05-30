@@ -7,7 +7,7 @@ Currently there exist two ways to perform the submission process to the Swedish 
 
 # The automated way
 
-The first and recommended one,uses the sda-cli tool developed by the Swedish Big Picture team. This solution can be used in any system with internet access and only requires downloading a binary file from [here](https://github.com/NBISweden/sda-cli/releases). This way is recommended for regular users, as well as for systems where the user lacks installation rights. Detailed instructions can be found [here](https://github.com/NBISweden/sda-cli/).
+The first and recommended one, uses the sda-cli tool developed by the Swedish Big Picture team. This solution can be used in any system with internet access and only requires downloading a binary file from [here](https://github.com/NBISweden/sda-cli/releases). This way is recommended for regular users, as well as for systems where the user lacks installation rights. Detailed instructions can be found [here](https://github.com/NBISweden/sda-cli/).
 
 # The manual way
 
@@ -27,7 +27,7 @@ The first step of a submission is to encrypt the submission data files with the
 
  - Download the crypt4gh public key
 
-   For the Swedish Big Picture node to be able to understand the encrypted files when they are uploaded, they need to be encrypted with the correct public key. This key can be downloaded from this repository with this command:
+   For the Swedish Big Picture node to be able to properly accept and archive the encrypted files when they are uploaded, they need to be encrypted with the correct public key. This key can be downloaded from this repository with this command:
    ```bash
    wget https://raw.githubusercontent.com/NBISweden/EGA-SE-user-docs/main/crypt4gh_bp_key.pub
    ```
@@ -40,7 +40,7 @@ The first step of a submission is to encrypt the submission data files with the
    crypt4gh generate --name=[my-key]
    ```
 
-   To verify that the key pair was created, run the `ls` command and make sure the keys you specified exist in the folder.
+   To verify that the key pair was created, check that the keys you specified exist in the folder, using the `ls` or `dir` command for Linux and Windows based systems respectively.
 
  - Encrypt the files
 
@@ -68,7 +68,7 @@ Check our short guide on [Calculating checksums of files](checksums.md) for deta
 
 The s3cmd tool requires a configuration file with the relevant settings. You can get the configuration file by logging in with your account [here](https://login.bp.nbis.se/). In case you do not have an Elixir ID, feel free to create an account using one of the available options.
 
-If you choose not to use the downloaded configuration file, we recommend setting the multipart chunk size significantly higher than the default 5 Mbyte. It can be set up to 2 Gbytes but values around 500 Mbyte are recommended.
+If you choose not to use the downloaded configuration file, we recommend setting the multipart chunk size significantly higher than the default 5 Mbytes value. It can be set up to 2 Gbytes but values around 500 Mbytes are recommended.
 
 **NOTE**: The following section requires the usage of `[username]` when uploading data.
 The username refers to the value of the `secret_key` in the downloaded configuration file. 
